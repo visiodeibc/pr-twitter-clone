@@ -3,3 +3,4 @@
 
 # 참조
 [Developing a Single Page App with FastAPI and Vue.js](https://testdriven.io/blog/developing-a-single-page-app-with-fastapi-and-vuejs/#objectives)
+[Figma](https://www.figma.com/file/X0Lge9GtYJF9FZK9rcfV5T/Twitter-bot?node-id=0%3A1)

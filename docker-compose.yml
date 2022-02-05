@@ -9,3 +9,12 @@ services:
     volumes:
       - ./services/back_end_fastapi:/app
     command: uvicorn src.main:app --reload --host 0.0.0.0 --port 5000
+
+  frontend:
+    build: ./services/front_end_vue
+    volumes:
+      - './services/front_end_vue:/app'
+      - '/app/node_modules'
+    ports:
+      - 8080:8080
+    command: yarn run serve

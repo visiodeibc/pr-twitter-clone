@@ -2,7 +2,7 @@ import createPersistedState from "vuex-persistedstate";
 import Vue from 'vue';
 import Vuex from 'vuex';
 
-import notes from './modules/tweets';
+import tweets from './modules/tweets';
 import users from './modules/users';
 
 

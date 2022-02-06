@@ -4,6 +4,7 @@ import VueRouter from 'vue-router';
 import Dashboard from '@/views/Dashboard';
 import Home from '@/views/Home.vue';
 import Login from '@/views/Login';
+import Note from '@/views/Note';
 import Profile from '@/views/Profile';
 import Register from '@/views/Register';
 
@@ -36,6 +37,13 @@ const routes = [
     name: 'Profile',
     component: Profile,
     meta: {requiresAuth: true},
+  },
+  {
+    path: '/note/:id',
+    name: 'Note',
+    component: Note,
+    meta: {requiresAuth: true},
+    props: true,
   }
 ]
 

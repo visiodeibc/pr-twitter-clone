@@ -4,9 +4,10 @@ import VueRouter from 'vue-router';
 import Dashboard from '@/views/Dashboard';
 import Home from '@/views/Home.vue';
 import Login from '@/views/Login';
-import Note from '@/views/Note';
+import Tweet from '@/views/Tweet';
 import Profile from '@/views/Profile';
 import Register from '@/views/Register';
+import EditTweet from '@/views/EditTweet';
 
 import store from '@/store';
 
@@ -41,16 +42,16 @@ const routes = [
     meta: {requiresAuth: true},
   },
   {
-    path: '/note/:id',
-    name: 'Note',
-    component: Note,
+    path: '/tweet/:id',
+    name: 'Tweet',
+    component: Tweet,
     meta: {requiresAuth: true},
     props: true,
   },
   {
-    path: '/note/:id',
-    name: 'EditNote',
-    component: EditNote,
+    path: '/tweet/:id',
+    name: 'EditTweet',
+    component: EditTweet,
     meta: {requiresAuth: true},
     props: true,
   }

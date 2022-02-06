@@ -8,6 +8,8 @@ import Note from '@/views/Note';
 import Profile from '@/views/Profile';
 import Register from '@/views/Register';
 
+import store from '@/store';
+
 Vue.use(VueRouter);
 
 const routes = [
@@ -58,6 +60,18 @@ const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes,
+});
+
+router.beforeEach((to, from, next) => {
+  if (to.matched.some(record => record.meta.requiresAuth)) {
+    if (store.getters.isAuthenticated) {
+      next();
+      return;
+    }
+    next('/login');
+  } else {
+    next();
+  }
 });
 
 export default router;

@@ -24,7 +24,7 @@
 <script>
 import { mapGetters, mapActions } from 'vuex';
 export default {
-  name: 'Edittweet',
+  name: 'EditTweet',
   props: ['id'],
   data() {
     return {

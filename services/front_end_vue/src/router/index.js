@@ -44,6 +44,13 @@ const routes = [
     component: Note,
     meta: {requiresAuth: true},
     props: true,
+  },
+  {
+    path: '/note/:id',
+    name: 'EditNote',
+    component: EditNote,
+    meta: {requiresAuth: true},
+    props: true,
   }
 ]
 

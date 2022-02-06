@@ -5,9 +5,11 @@ from src.database.models import Tweets
 from src.schemas.tweets import TweetOutSchema
 from src.schemas.token import Status
 
-
-async def get_tweets():
+async def get_all_tweets():
     return await TweetOutSchema.from_queryset(Tweets.all())
+
+async def get_tweets(current_user):
+    return await TweetOutSchema.from_queryset(Tweets.filter(author=current_user.id))
 
 
 async def get_tweet(tweet_id) -> TweetOutSchema:

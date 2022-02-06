@@ -13,14 +13,21 @@ from src.schemas.users import UserOutSchema
 
 router = APIRouter()
 
+@router.get(
+    "/all_tweets",
+    response_model=List[TweetOutSchema],
+    dependencies=[Depends(get_current_user)],
+)
+async def get_tweets():
+    return await crud.get_all_tweets()
 
 @router.get(
     "/tweets",
     response_model=List[TweetOutSchema],
     dependencies=[Depends(get_current_user)],
 )
-async def get_tweets():
-    return await crud.get_tweets()
+async def get_tweets(current_user: UserOutSchema = Depends(get_current_user)):
+    return await crud.get_tweets(current_user)
 
 
 @router.get(

@@ -2,7 +2,9 @@
   <header>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
       <div class="container">
-        <a class="navbar-brand" href="/">Twitter Mock</a>
+        <a class="navbar-brand" href="/">
+          <img src="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/345_Twitter_logo-1024.png" alt="..." height="36">
+         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>

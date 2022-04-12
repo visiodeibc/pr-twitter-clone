@@ -11,3 +11,5 @@
 1. Landing Page에 모든 트윗 보일 수 있게
 2. 트윗할때 private, public정할 수 있게 하기
 3. public만 보일 수 있도록 하기
+4. Dashboard pagination
+5. 트윗 작성 popup으로 하기

@@ -19,19 +19,20 @@
         <br />
       </div>
     </div>
-    <div v-else>
-      <p>This site is built with FastAPI and Vue.</p>
+    <!-- <div v-else>
+      <h2>This site is built with FastAPI and Vue.</h2>
       <div v-if="isLoggedIn" id="logout">
-        <p id="logout">
-          Click <a href="/dashboard">here</a> to view all tweetss.
-        </p>
+        <h3>
+
+          You don't have any Tweet! Go tweet!!
+        </h3>
       </div>
       <p v-else>
         <span><a href="/register">Register</a></span>
         <span> or </span>
         <span><a href="/login">Log In</a></span>
       </p>
-    </div>
+    </div> -->
   </section>
 </template>
 
@@ -39,25 +40,14 @@
 import { mapGetters, mapActions } from "vuex";
 export default {
   name: "Dashboard",
-  data() {
-    return {
-      form: {
-        title: "",
-        content: "",
-      },
-    };
-  },
   created: function () {
     return this.$store.dispatch("getTweets");
   },
   computed: {
     ...mapGetters({ tweets: "stateTweets" }),
-  },
-  methods: {
-    ...mapActions(["createTweet"]),
-    async submit() {
-      await this.createTweet(this.form);
-    },
+    // isLoggedIn: function () {
+    //   return this.$store.getters.isAuthenticated;
+    // },
   },
 };
 </script>

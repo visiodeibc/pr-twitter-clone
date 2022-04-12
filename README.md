@@ -3,4 +3,11 @@
 
 # 참조
 [Developing a Single Page App with FastAPI and Vue.js](https://testdriven.io/blog/developing-a-single-page-app-with-fastapi-and-vuejs/#objectives)
+
 [Figma](https://www.figma.com/file/X0Lge9GtYJF9FZK9rcfV5T/Twitter-bot?node-id=0%3A1)
+
+# Todo
+
+1. Landing Page에 모든 트윗 보일 수 있게
+2. 트윗할때 private, public정할 수 있게 하기
+3. public만 보일 수 있도록 하기

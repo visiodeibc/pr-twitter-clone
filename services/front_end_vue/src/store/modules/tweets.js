@@ -6,6 +6,7 @@ const state = {
 };
 
 const getters = {
+  statePublicTweets: state => state.publicTweets,
   stateTweets: state => state.tweets,
   stateTweet: state => state.tweet,
 };
@@ -19,6 +20,12 @@ const actions = {
     let {data} = await axios.get('tweets');
     commit('setTweets', data);
   },
+
+  async getAllPublicTweets({commit}) {
+    let {data} = await axios.get('all_tweets');
+    commit('setPublicTweets', data);
+  },
+
   async viewTweet({commit}, id) {
     let {data} = await axios.get(`tweet/${id}`);
     commit('setTweet', data);
@@ -34,6 +41,9 @@ const actions = {
 };
 
 const mutations = {
+  setPublicTweets(state, tweets){
+    state.publicTweets = tweets;
+  },
   setTweets(state, tweets){
     state.tweets = tweets;
   },

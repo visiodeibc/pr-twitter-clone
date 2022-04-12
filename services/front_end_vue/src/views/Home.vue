@@ -41,10 +41,10 @@ import { mapGetters, mapActions } from "vuex";
 export default {
   name: "Dashboard",
   created: function () {
-    return this.$store.dispatch("getTweets");
+    return this.$store.dispatch("getAllPublicTweets");
   },
   computed: {
-    ...mapGetters({ tweets: "stateTweets" }),
+    ...mapGetters({ tweets: "statePublicTweets" }),
     // isLoggedIn: function () {
     //   return this.$store.getters.isAuthenticated;
     // },

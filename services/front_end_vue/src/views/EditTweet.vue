@@ -1,12 +1,18 @@
 <template>
   <section>
     <h1>Edit tweet</h1>
-    <hr/><br/>
+    <hr />
+    <br />
 
     <form @submit.prevent="submit">
       <div class="mb-3">
         <label for="title" class="form-label">Title:</label>
-        <input type="text" name="title" v-model="form.title" class="form-control" />
+        <input
+          type="text"
+          name="title"
+          v-model="form.title"
+          class="form-control"
+        />
       </div>
       <div class="mb-3">
         <label for="content" class="form-label">Content:</label>
@@ -22,37 +28,37 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
+import { mapGetters, mapActions } from "vuex";
 export default {
-  name: 'EditTweet',
-  props: ['id'],
+  name: "EditTweet",
+  props: ["id"],
   data() {
     return {
       form: {
-        title: '',
-        content: '',
+        title: "",
+        content: "",
       },
     };
   },
-  created: function() {
+  created: function () {
     this.GetTweet();
   },
   computed: {
-    ...mapGetters({ tweet: 'stateTweet' }),
+    ...mapGetters({ tweet: "stateTweet" }),
   },
   methods: {
-    ...mapActions(['updateTweet', 'viewTweet']),
+    ...mapActions(["updateTweet", "viewTweet"]),
     async submit() {
-    try {
-      let tweet = {
-        id: this.id,
-        form: this.form,
-      };
-      await this.updateTweet(tweet);
-      this.$router.push({name: 'Tweet', params:{id: this.tweet.id}});
-    } catch (error) {
-      console.log(error);
-    }
+      try {
+        let tweet = {
+          id: this.id,
+          form: this.form,
+        };
+        await this.updateTweet(tweet);
+        this.$router.push({ name: "Tweet", params: { id: this.tweet.id } });
+      } catch (error) {
+        console.log(error);
+      }
     },
     async GetTweet() {
       try {
@@ -61,9 +67,9 @@ export default {
         this.form.content = this.tweet.content;
       } catch (error) {
         console.error(error);
-        this.$router.push('/dashboard');
+        this.$router.push("/dashboard");
       }
-    }
+    },
   },
 };
 </script>

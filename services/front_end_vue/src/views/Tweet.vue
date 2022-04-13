@@ -6,7 +6,7 @@
 
     <div v-if="user.id === tweet.author.id">
       <p><router-link :to="{name: 'EditTweet', params:{id: tweet.id}}" class="btn btn-primary">Edit</router-link></p>
-      <p><button @click="removeTweet()" class="btn btn-secondary">Delete</button></p>
+      <p><button @click="removeTweet()" class="btn btn-danger">Delete</button></p>
     </div>
   </div>
 </template>

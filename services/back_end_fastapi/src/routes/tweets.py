@@ -16,7 +16,7 @@ router = APIRouter()
 @router.get(
     "/all_tweets",
     response_model=List[TweetOutSchema],
-    dependencies=[Depends(get_current_user)],
+    # dependencies=[Depends(get_current_user)],
 )
 async def get_tweets():
     return await crud.get_all_tweets()

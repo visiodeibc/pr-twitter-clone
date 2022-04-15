@@ -13,4 +13,5 @@
 3. public만 보일 수 있도록 하기
 4. Dashboard pagination
 5. 트윗 작성 popup으로 하기
-6. Update Password
+~~6. Update Password~~
+7. 트윗, 팝업 컴포넨트화 시켜보기

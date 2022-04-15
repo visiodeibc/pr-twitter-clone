@@ -1,5 +1,10 @@
 <template>
   <section>
+    <div class="text-center">
+    <h1>All Tweets</h1>
+    <hr />
+    </div>
+    <br />
     <div v-if="tweets.length">
       <div v-for="tweet in tweets" :key="tweet.id" class="tweets">
         <div class="container">

@@ -3,31 +3,33 @@
     <h1>Your Profile</h1>
     <hr />
     <br />
-    <div>
-      <p>
-        <strong>Full Name:</strong> <span>{{ user.full_name }}</span>
-      </p>
-      <p>
-        <strong>Username:</strong> <span>{{ user.username }}</span>
-      </p>
+    <div class="text-center">
+      <div>
+        <p>
+          <strong>Full Name:</strong> <span>{{ user.full_name }}</span>
+        </p>
+        <p>
+          <strong>Username:</strong> <span>{{ user.username }}</span>
+        </p>
 
-      <div class="container">
-        <div class="row justify-content-md-center">
-          <p>
-            <router-link
-              :to="{ name: 'EditUser', params: { id: user.id } }"
-              class="btn btn-primary btn-lg btn-block m-2"
-            >
-              Edit Account</router-link
-            >
+        <div class="container">
+          <div class="row justify-content-md-center">
+            <p>
+              <router-link
+                :to="{ name: 'EditUser', params: { id: user.id } }"
+                class="btn btn-primary btn-lg btn-block m-2"
+              >
+                Edit Account</router-link
+              >
 
-            <button
-              @click="deleteAccount()"
-              class="btn btn-danger btn-lg btn-block m-2"
-            >
-              Delete Account
-            </button>
-          </p>
+              <button
+                @click="deleteAccount()"
+                class="btn btn-danger btn-lg btn-block m-2"
+              >
+                Delete Account
+              </button>
+            </p>
+          </div>
         </div>
       </div>
     </div>

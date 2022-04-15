@@ -24,25 +24,15 @@
         <br />
       </div>
     </div>
-    <!-- <div v-else>
+    <div v-else>
       <h2>This site is built with FastAPI and Vue.</h2>
-      <div v-if="isLoggedIn" id="logout">
-        <h3>
-
-          You don't have any Tweet! Go tweet!!
-        </h3>
-      </div>
-      <p v-else>
-        <span><a href="/register">Register</a></span>
-        <span> or </span>
-        <span><a href="/login">Log In</a></span>
-      </p>
-    </div> -->
+      <h3>You don't have any Tweet! Go tweet!!</h3>
+    </div>
   </section>
 </template>
 
 <script>
-import { mapGetters, mapActions } from "vuex";
+import { mapGetters } from "vuex";
 export default {
   name: "Dashboard",
   created: function () {

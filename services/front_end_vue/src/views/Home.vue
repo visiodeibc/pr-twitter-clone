@@ -1,33 +1,17 @@
 <template>
   <section>
     <div class="text-center">
-    <h1>All Tweets</h1>
-    <hr />
+      <h1>All Tweets</h1>
+      <hr />
     </div>
     <br />
     <div v-if="tweets.length">
-      <div v-for="tweet in tweets" :key="tweet.id" class="tweets">
-        <div class="container">
-          <div class="row justify-content-md-center">
-            <div class="card" style="width: 18rem">
-              <div class="card-body">
-                <ul>
-                  <li><strong>Tweet Title:</strong> {{ tweet.title }}</li>
-                  <li><strong>Content:</strong> {{ tweet.content }}</li>
-                  <li><strong>Author:</strong> {{ tweet.author.username }}</li>
-                  <li>
-                    <router-link
-                      :to="{ name: 'Tweet', params: { id: tweet.id } }"
-                      >View</router-link
-                    >
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <br />
-      </div>
+      <Tweet
+        v-for="tweet in tweets"
+        v-bind:key="tweet.id"
+        v-bind:tweet="tweet"
+      ></Tweet>
+      <br />
     </div>
     <div v-else>
       <h2>This site is built with FastAPI and Vue.</h2>
@@ -38,8 +22,13 @@
 
 <script>
 import { mapGetters } from "vuex";
+import Tweet from "../components/Tweet.vue";
+
 export default {
   name: "Dashboard",
+  components: {
+    Tweet,
+  },
   created: function () {
     return this.$store.dispatch("getAllPublicTweets");
   },

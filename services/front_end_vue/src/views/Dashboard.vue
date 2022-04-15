@@ -39,29 +39,11 @@
           <br />
 
           <div v-if="tweets.length">
-            <div v-for="tweet in tweets" :key="tweet.id" class="tweets">
-              <div class="container">
-                <div class="row justify-content-md-center">
-                  <div class="card" style="width: 18rem">
-                    <div class="card-body">
-                      <ul>
-                        <li><strong>Tweet Title:</strong> {{ tweet.title }}</li>
-                        <li>
-                          <strong>Author:</strong> {{ tweet.author.username }}
-                        </li>
-                        <li>
-                          <router-link
-                            :to="{ name: 'Tweet', params: { id: tweet.id } }"
-                            >View</router-link
-                          >
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <br />
-            </div>
+            <Tweet
+              v-for="tweet in tweets"
+              v-bind:key="tweet.id"
+              v-bind:tweet="tweet"
+            ></Tweet>
           </div>
 
           <div v-else>
@@ -75,8 +57,15 @@
 
 <script>
 import { mapGetters, mapActions } from "vuex";
+import Tweet from "../components/Tweet.vue";
+
 export default {
   name: "Dashboard",
+
+  components: {
+    Tweet,
+  },
+
   data() {
     return {
       form: {

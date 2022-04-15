@@ -10,7 +10,7 @@ from tortoise.contrib.fastapi import HTTPNotFoundError
 import src.crud.users as crud
 from src.auth.users import validate_user
 from src.schemas.token import Status
-from src.schemas.users import UserInSchema, UserOutSchema
+from src.schemas.users import UserInSchema, UserOutSchema, UpdateUser
 
 from src.auth.jwthandler import (
     create_access_token,
@@ -62,6 +62,19 @@ async def login(user: OAuth2PasswordRequestForm = Depends()):
 )
 async def read_users_me(current_user: UserOutSchema = Depends(get_current_user)):
     return current_user
+
+@router.patch(
+    "/user/{user_id}",
+    dependencies=[Depends(get_current_user)],
+    response_model=UserOutSchema,
+    responses={404: {"model": HTTPNotFoundError}},
+)
+async def update_user(
+    user_id: int,
+    user: UpdateUser,
+    current_user: UserOutSchema = Depends(get_current_user),
+) -> UserOutSchema:
+    return await crud.update_user(user_id, user, current_user)
 
 @router.delete(
     "/user/{user_id}",

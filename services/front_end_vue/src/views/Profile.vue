@@ -11,25 +11,25 @@
         <strong>Username:</strong> <span>{{ user.username }}</span>
       </p>
 
-    <div class="container">
-          <div class="row justify-content-md-center">
-      <p>
-    
-        <router-link
-          :to="{ name: 'EditUser', params: { id: user.id } }"
-          class="btn btn-primary btn-lg btn-block"
-        >
-          Edit Account</router-link
-        >
+      <div class="container">
+        <div class="row justify-content-md-center">
+          <p>
+            <router-link
+              :to="{ name: 'EditUser', params: { id: user.id } }"
+              class="btn btn-primary btn-lg btn-block m-2"
+            >
+              Edit Account</router-link
+            >
 
-        <button @click="deleteAccount()" class="btn btn-danger btn-lg btn-block">
-          Delete Account
-        </button>
-
-
-      </p>
-                </div>
+            <button
+              @click="deleteAccount()"
+              class="btn btn-danger btn-lg btn-block m-2"
+            >
+              Delete Account
+            </button>
+          </p>
         </div>
+      </div>
     </div>
   </section>
 </template>

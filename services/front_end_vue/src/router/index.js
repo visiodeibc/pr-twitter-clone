@@ -8,6 +8,7 @@ import Tweet from '@/views/Tweet';
 import Profile from '@/views/Profile';
 import Register from '@/views/Register';
 import EditTweet from '@/views/EditTweet';
+import EditUser from '@/views/EditUser';
 
 import store from '@/store';
 
@@ -52,6 +53,13 @@ const routes = [
     path: '/tweet/:id',
     name: 'EditTweet',
     component: EditTweet,
+    meta: {requiresAuth: true},
+    props: true,
+  },
+  {
+    path: '/user/:id',
+    name: 'EditUser',
+    component: EditUser,
     meta: {requiresAuth: true},
     props: true,
   }

@@ -18,3 +18,4 @@ TweetOutSchema = pydantic_model_creator(
 class UpdateTweet(BaseModel):
     title: Optional[str]
     content: Optional[str]
+    public: Optional[bool]

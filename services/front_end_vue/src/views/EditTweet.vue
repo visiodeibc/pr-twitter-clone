@@ -22,6 +22,17 @@
           class="form-control"
         ></textarea>
       </div>
+       <div class="mb-3">
+              <label for="public" class="form-label" style="padding-right: 10px"
+                >Public:
+              </label>
+              <input
+                type="checkbox"
+                v-model="form.public"
+                true-value=true
+                false-value=false
+              />
+            </div>
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
   </section>
@@ -37,6 +48,7 @@ export default {
       form: {
         title: "",
         content: "",
+        public: "",
       },
     };
   },
@@ -50,6 +62,7 @@ export default {
     ...mapActions(["updateTweet", "viewTweet"]),
     async submit() {
       try {
+        console.log(this.form)
         let tweet = {
           id: this.id,
           form: this.form,
@@ -65,6 +78,7 @@ export default {
         await this.viewTweet(this.id);
         this.form.title = this.tweet.title;
         this.form.content = this.tweet.content;
+        this.form.public = this.tweet.public;
       } catch (error) {
         console.error(error);
         this.$router.push("/dashboard");

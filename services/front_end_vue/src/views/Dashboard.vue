@@ -25,6 +25,18 @@
                 class="form-control"
               ></textarea>
             </div>
+            <div class="mb-3">
+              <label for="public" class="form-label" style="padding-right: 10px"
+                >Public:
+              </label>
+              <input
+                type="checkbox"
+                v-model="form.public"
+                true-value=true
+                false-value=false
+              />
+            </div>
+
             <div class="text-center">
               <button type="submit" class="btn btn-primary">Submit</button>
             </div>
@@ -71,6 +83,7 @@ export default {
       form: {
         title: "",
         content: "",
+        public: true,
       },
     };
   },
@@ -83,9 +96,12 @@ export default {
   methods: {
     ...mapActions(["createTweet"]),
     async submit() {
+      // console.log(this.form.public);
+      // console.log("checkbox".length);
       await this.createTweet(this.form);
       this.form.title = "";
       this.form.content = "";
+      this.form.public = "";
     },
   },
 };

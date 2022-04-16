@@ -8,7 +8,7 @@
 
 # Todo
 
-1. Landing Page에 모든 트윗 보일 수 있게
+~~1. Landing Page에 모든 트윗 보일 수 있게~~
 2. 트윗할때 private, public 정할 수 있게 하기
 3. public만 보일 수 있도록 하기
 4. Dashboard pagination

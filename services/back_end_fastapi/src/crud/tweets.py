@@ -6,7 +6,7 @@ from src.schemas.tweets import TweetOutSchema
 from src.schemas.token import Status
 
 async def get_all_tweets():
-    return await TweetOutSchema.from_queryset(Tweets.all())
+    return await TweetOutSchema.from_queryset(Tweets.filter(public=True))
 
 async def get_tweets(current_user):
     return await TweetOutSchema.from_queryset(Tweets.filter(author=current_user.id))

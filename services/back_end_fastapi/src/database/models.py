@@ -14,6 +14,7 @@ class Tweets(models.Model):
     id = fields.IntField(pk=True)
     title = fields.CharField(max_length=225)
     content = fields.TextField()
+    private = fields.BooleanField(default=False)
     author = fields.ForeignKeyField("models.Users", related_name="tweet")
     created_at = fields.DatetimeField(auto_now_add=True)
     modified_at = fields.DatetimeField(auto_now=True)

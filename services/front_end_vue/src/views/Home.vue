@@ -14,8 +14,10 @@
       <br />
     </div>
     <div v-else>
-      <h2>This site is built with FastAPI and Vue.</h2>
-      <h3>You don't have any Tweet! Go tweet!!</h3>
+      <div class="text-center">
+        <h2>This site is built with FastAPI and Vue.</h2>
+        <h3>You don't have any Tweet! Go tweet!!</h3>
+      </div>
     </div>
   </section>
 </template>

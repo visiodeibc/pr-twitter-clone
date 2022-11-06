@@ -46,6 +46,6 @@ async def delete_tweet(tweet_id, current_user) -> Status:
         deleted_count = await Tweets.filter(id=tweet_id).delete()
         if not deleted_count:
             raise HTTPException(status_code=404, detail=f"Tweet {tweet_id} not found")
-        return Status(message=f"Deleted note {tweet_id}") 
+        return Status(message=f"Deleted note {tweet_id}")
 
     raise HTTPException(status_code=403, detail=f"Not authorized to delete")

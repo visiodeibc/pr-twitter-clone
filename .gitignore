@@ -5,3 +5,6 @@ services/back_end_fastapi/src/__pycache__/main.cpython-39.pyc
 services/back_end_fastapi/src/auth/__pycache__/users.cpython-39.pyc
 services/back_end_fastapi/src/crud/__pycache__/users.cpython-39.pyc
 *.pyc
+.idea/modules.xml
+.idea/twitter_clone.iml
+.idea/vcs.xml

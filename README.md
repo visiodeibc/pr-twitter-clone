@@ -18,4 +18,15 @@
    ~~1. 트윗~~
    2. 트윗 상세 페이지 팝업
 8. 좋아요 기능 추가하기
+   1. 로그인 했을때는 좋아요 할 수 있고 아님 숫자만 볼 수 있다.
 9.  댓글 기능 추가하기
+
+
+# 고민 거리(현 상황)
+- like db 오브젝트를 만들었는데 이거를 트위터 부속으로 날려야 하는지 고민중...흠냐
+
+
+# 사용법
+## db변화가 있은 후에
+`docker-compose exec backend aerich migrate`
+`docker-compose exec backend aerich upgrade`

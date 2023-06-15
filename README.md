@@ -27,6 +27,11 @@
 
 
 # 사용법
+- [블로 참조](https://tech.visiodeibc.dev/2022/01/30/Twitter-clone-1-fastapi-setup/)
+`docker-compose up -d --build`
+http://127.0.0.1:8080/ 에서는 front end 확인
+http://localhost:5001/docs 에서는 Swagger document를 확인할 수 있다.
+
 ## db변화가 있은 후에
 `docker-compose exec backend aerich migrate`
 `docker-compose exec backend aerich upgrade`

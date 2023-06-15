@@ -1,7 +1,7 @@
 <template>
   <div class="container">
-    <div class="row justify-content-md-center">
-      <div class="card" style="width: 18rem">
+    <div class="row justify-content-md-center mb-3">
+      <div class="card" style="width: 18rem;">
         <div class="card-body">
           <ul>
             <li><strong>Tweet Title:</strong> {{ tweet.title }}</li>

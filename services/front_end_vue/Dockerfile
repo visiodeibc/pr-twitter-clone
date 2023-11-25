@@ -1,6 +1,9 @@
 FROM node:16-alpine
 
 WORKDIR /app
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
+RUN corepack enable
 
 ENV PATH /app/node_modules/.bin:$PATH
 

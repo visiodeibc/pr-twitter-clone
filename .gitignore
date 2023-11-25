@@ -7,3 +7,4 @@ services/back_end_fastapi/src/crud/__pycache__/users.cpython-39.pyc
 .idea/modules.xml
 .idea/twitter_clone.iml
 .idea/vcs.xml
+*.pyc

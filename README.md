@@ -8,14 +8,14 @@
 
 # Todo
 
-~~1. Landing Page에 모든 트윗 보일 수 있게~~
-~~2. 트윗할때 private, public 정할 수 있게 하기~~
-~~3. public만 보일 수 있도록 하기~~
+1. ✅Landing Page에 모든 트윗 보일 수 있게
+2. ✅트윗할때 private, public 정할 수 있게 하기
+3. ✅public만 보일 수 있도록 하기
 4. Dashboard pagination
 5. 트윗 작성 popup으로 하기
-~~6. Update Password~~
+6. ✅Update Password
 7. 컴포넨트화 시켜보기
-   ~~1. 트윗~~
+   1. ✅트윗
    2. 트윗 상세 페이지 팝업
 8. 좋아요 기능 추가하기
    1. 로그인 했을때는 좋아요 할 수 있고 아님 숫자만 볼 수 있다.
